@@ -1,4 +1,4 @@
-<template> 
+<template>                                                                                                                              
     <div class="container-fluid"> 
             <h3> {{ message }} </h3>
             <table class="table table-striped table-bordered">
@@ -15,7 +15,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="(tmprayer, index) in timeprs "  v-bind:key="index" >
-                        <td> {{ index + 1}}</td>
+                        <td> {{ index + 1}} </td>
                         <td>{{tmprayer.timings.Fajr}}</td>
                         <td>{{tmprayer.timings.Sunrise}}</td>
                         <td>{{tmprayer.timings.Dhuhr}}</td>
@@ -69,9 +69,6 @@ export default({
             message : "Bienvenue a mon Time Prayer Calendar!! ",
         }
     },
-    methods: {
-
-    },
 
     filters: {
       capitalize(str) {
@@ -99,6 +96,13 @@ export default({
    text-align: center; 
    background-color :bisque;
    font-size: 18px;
+};
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: .3rem;
 }
 
 </style>

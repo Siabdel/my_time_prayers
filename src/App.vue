@@ -1,21 +1,27 @@
 <template>
   <div class="container">
-      <ul class="list-group list-group-horizontal list-inline text-bold">
-        <li class="list-group_item">
+    <div class="row">
+      <ul class="list-group list-group-horizontal" role="tablist">
+        <li class="list-group-item">
           <router-link to="/"> Accueil</router-link>
         </li>
-        <li class="list-group_item">
+        <li class="list-group-item">
           <router-link to="/param">Settings</router-link>
         </li>
-        <li>
-          <router-link to="/timep">Time Prayer today</router-link>
+        <li class="list-group-item">
+          <router-link to="/today">Aujourdhui</router-link>
         </li>
-        <li class="list-group_item">
+         <li class="list-group-item">
+          <router-link to="/tpmonth">TP Monsuel</router-link>
+        </li>
+        <li class="list-group-item">
           <router-link to="http://localhost:8000/api/v1/prayer_time/" >Prayer API</router-link>
         </li>
       </ul>
-
-      <router-view> </router-view>
+    </div>
+      <div class="row">
+        <router-view> </router-view> 
+      </div>
   </div>
 </template>
 
@@ -30,10 +36,8 @@ export default {
   methods :{
     ...mapActions(["fetchPrayerTime", ])
   },
-  // created
-  async created(){
-    await this.fetchPrayerTime();
-    //console.log("fetchPrayerTime = ... !!" )
-  },
+  created(){
+    this.fetchPrayerTime()
+  }
 };
 </script>
